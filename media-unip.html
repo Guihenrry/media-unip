@@ -28,7 +28,7 @@
 				pim = document.querySelector('.pim').value;
 			$resultado = document.querySelector('.resultado');
 			var m = ((np1 * 4) + (np2 * 4) + (pim * 2))/10;
-			$resultado.innerHTML = 'Sua media foi: ' + m;
+			$resultado.innerHTML = 'Sua media foi: ' + m.toFixed(1);
 			if (m >= 5) {
 				document.querySelector('.ap').innerHTML = 'Aluno Aprovado'
 			} else {
