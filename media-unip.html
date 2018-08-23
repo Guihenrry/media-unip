@@ -41,8 +41,9 @@
 				np2 = document.querySelector('.np2').value,
 				pim = document.querySelector('.pim').value;
 			try{
-				if (np1 == '') throw 'Informe uma nota'
-				if (np1 > 10 || np1 < 0) throw 'informe uma nota entre 0 e 10'
+				if (np1 == '') throw 'Informe uma nota';
+				if (np1 > 10 || np1 < 0) throw 'informe uma nota entre 0 e 10';
+				document.querySelector('.erro').innerHTML = '';
 			} catch(erro){
 				document.querySelector('.resultado').innerHTML = '';
 				document.querySelector('.ap').innerHTML = '';
@@ -50,8 +51,9 @@
 			} 
 
 			try{
-				if (np2 == '') throw 'Informe uma nota'
-				if (np2 > 10 || np2 < 0) throw 'informe uma nota entre 0 e 10'
+				if (np2 == '') throw 'Informe uma nota';
+				if (np2 > 10 || np2 < 0) throw 'informe uma nota entre 0 e 10';
+				document.querySelector('.erro2').innerHTML = '';
 			} catch(erro){
 				document.querySelector('.resultado').innerHTML = '';
 				document.querySelector('.ap').innerHTML = '';
@@ -59,8 +61,9 @@
 			}
 
 			try{
-				if (pim == '') throw 'Informe uma nota'
-				if (pim > 10 || pim < 0) throw 'informe uma nota entre 0 e 10'
+				if (pim == '') throw 'Informe uma nota';
+				if (pim > 10 || pim < 0) throw 'informe uma nota entre 0 e 10';
+				document.querySelector('.erro3').innerHTML = '';
 			} catch(erro){
 				document.querySelector('.resultado').innerHTML = '';
 				document.querySelector('.ap').innerHTML = '';
