@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title> Aula 04 - JS</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Media Unip</h1>
+	<div class="container">
+	<div class="resultado"> </div>
+	<div class="ap"></div>
+	<form>
+		<p class="erro"></p>
+		<input type="number"  min="0" max="10" class="np1" placeholder="Nota da NP1">
+		<p class="erro2"></p>
+		<input type="number" min="0" max="10" class="np2" placeholder="Nota da NP2">
+		<p class="erro3"></p>
+		<input type="number" min="0" max="10" class="pim" placeholder="Nota do Pim">
+		<input type="button" value="Eviar" class="btn"  onclick="media(), verifica()">
+	</form>
+	</div>
+	<script>
+		function media(){
+			var np1 = document.querySelector('.np1').value,
+				np2 = document.querySelector('.np2').value,
+				pim = document.querySelector('.pim').value;
+			$resultado = document.querySelector('.resultado');
+			var m = ((np1 * 4) + (np2 * 4) + (pim * 2))/10;
+			$resultado.innerHTML = 'Sua media foi: ' + m;
+			if (m >= 5) {
+				document.querySelector('.ap').innerHTML = 'Aluno Aprovado'
+			} else {
+				document.querySelector('.ap').innerHTML = 'Aluno Reprovado'
+			}
+		}
+		
+		function verifica(){
+			var np1 = document.querySelector('.np1').value,
+				np2 = document.querySelector('.np2').value,
+				pim = document.querySelector('.pim').value;
+			try{
+				if (np1 == '') throw 'Informe uma nota'
+				if (np1 > 10 || np1 < 0) throw 'informe uma nota entre 0 e 10'
+			} catch(erro){
+				document.querySelector('.resultado').innerHTML = '';
+				document.querySelector('.ap').innerHTML = '';
+				document.querySelector('.erro').innerHTML = 'Erro: ' + erro;
+			} 
+
+			try{
+				if (np2 == '') throw 'Informe uma nota'
+				if (np2 > 10 || np2 < 0) throw 'informe uma nota entre 0 e 10'
+			} catch(erro){
+				document.querySelector('.resultado').innerHTML = '';
+				document.querySelector('.ap').innerHTML = '';
+				document.querySelector('.erro2').innerHTML = 'Erro: ' + erro;
+			}
+
+			try{
+				if (pim == '') throw 'Informe uma nota'
+				if (pim > 10 || pim < 0) throw 'informe uma nota entre 0 e 10'
+			} catch(erro){
+				document.querySelector('.resultado').innerHTML = '';
+				document.querySelector('.ap').innerHTML = '';
+				document.querySelector('.erro3').innerHTML = 'Erro: ' + erro;
+			}
+		} 
+	</script>
+</body>
+</html>
